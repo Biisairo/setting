@@ -18,8 +18,8 @@ set tabstop=4 " 탭으로 들여쓰기시 사용할 스페이스바 개수. (= t
 set shiftwidth=4 " <<, >> 으로 들여쓰기시 사용할 스페이스바 개수. (= sw)
 set softtabstop=4 " 스페이스바 n개를 하나의 탭으로 처리. (= sts)
 set nofoldenable " 시작시 내용을 모두 펼침
-set cindent " c 언어 들여쓰기
-"set paste " 붙여넣기 할 때 들여쓰기 무시, 자동들여쓰기가 
+"set cindent " c 언어 들여쓰기
+"set paste
 
 " Search
 set hlsearch " 검색된 결과 강조 표시. (= hls) <-> nohlsearch (= nohls)
@@ -53,3 +53,14 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \ exe "norm g`\"" |
 \ endif
+
+"Nerd Tree
+nmap <S-Z> :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+
+" vim-plug
+call plug#begin()
+
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
